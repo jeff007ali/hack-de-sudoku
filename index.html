@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>
+HackDeSudoku
+</title>
+<style>
+table, tr, td {
+   border: 1px solid black;
+}
+
+.tb{
+	width:30px;
+	height:30px;
+	font-size:25px;
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.mainDiv{
+	
+	
+}
+
+.solvebtn {
+  background-color: #1aa851;
+}
+
+.clearbtn {
+  background-color: #f4511e;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 327px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn:hover span {
+  padding-right: 25px;
+}
+
+.btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+<script src="hds.js"></script>
+</head>
+<body>
+<div class="mainDiv">
+<table id="tblSudoku" >
+<tr>
+<td><input type="text" id="tb00" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb01" class="tb" maxlength="1" value="2"></td>
+<td><input type="text" id="tb02" class="tb" maxlength="1" value="6"></td>
+<td><input type="text" id="tb03" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb04" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb05" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb06" class="tb" maxlength="1" value="8"></td>
+<td><input type="text" id="tb07" class="tb" maxlength="1" value="1"></td>
+<td><input type="text" id="tb08" class="tb" maxlength="1" value=""></td>
+</tr>                             
+<tr>                              
+<td><input type="text" id="tb10" class="tb" maxlength="1" value="3"></td>
+<td><input type="text" id="tb11" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb12" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb13" class="tb" maxlength="1" value="7"></td>
+<td><input type="text" id="tb14" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb15" class="tb" maxlength="1" value="8"></td>
+<td><input type="text" id="tb16" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb17" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb18" class="tb" maxlength="1" value="6"></td>
+</tr>                           
+<tr>                         
+<td><input type="text" id="tb20" class="tb" maxlength="1" value="4"></td>
+<td><input type="text" id="tb21" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb22" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb23" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb24" class="tb" maxlength="1" value="5"></td>
+<td><input type="text" id="tb25" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb26" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb27" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb28" class="tb" maxlength="1" value="7"></td>
+</tr>                            
+<tr>                             
+<td><input type="text" id="tb30" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb31" class="tb" maxlength="1" value="5"></td>
+<td><input type="text" id="tb32" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb33" class="tb" maxlength="1" value="1"></td>
+<td><input type="text" id="tb34" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb35" class="tb" maxlength="1" value="7"></td>
+<td><input type="text" id="tb36" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb37" class="tb" maxlength="1" value="9"></td>
+<td><input type="text" id="tb38" class="tb" maxlength="1" value=""></td>
+</tr>                           
+<tr>                             
+<td><input type="text" id="tb40" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb41" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb42" class="tb" maxlength="1" value="3"></td>
+<td><input type="text" id="tb43" class="tb" maxlength="1" value="9"></td>
+<td><input type="text" id="tb44" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb45" class="tb" maxlength="1" value="5"></td>
+<td><input type="text" id="tb46" class="tb" maxlength="1" value="1"></td>
+<td><input type="text" id="tb47" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb48" class="tb" maxlength="1" value=""></td>
+</tr>                             
+<tr>                            
+<td><input type="text" id="tb50" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb51" class="tb" maxlength="1" value="4"></td>
+<td><input type="text" id="tb52" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb53" class="tb" maxlength="1" value="3"></td>
+<td><input type="text" id="tb54" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb55" class="tb" maxlength="1" value="2"></td>
+<td><input type="text" id="tb56" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb57" class="tb" maxlength="1" value="5"></td>
+<td><input type="text" id="tb58" class="tb" maxlength="1" value=""></td>
+</tr>                            
+<tr>                            
+<td><input type="text" id="tb60" class="tb" maxlength="1" value="1"></td>
+<td><input type="text" id="tb61" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb62" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb63" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb64" class="tb" maxlength="1" value="3"></td>
+<td><input type="text" id="tb65" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb66" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb67" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb68" class="tb" maxlength="1" value="2"></td>
+</tr>                                        
+<tr>                                         
+<td><input type="text" id="tb70" class="tb" maxlength="1" value="5"></td>
+<td><input type="text" id="tb71" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb72" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb73" class="tb" maxlength="1" value="2"></td>
+<td><input type="text" id="tb74" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb75" class="tb" maxlength="1" value="4"></td>
+<td><input type="text" id="tb76" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb77" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb78" class="tb" maxlength="1" value="9"></td>
+</tr>                                        
+<tr>                                         
+<td><input type="text" id="tb80" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb81" class="tb" maxlength="1" value="3"></td>
+<td><input type="text" id="tb82" class="tb" maxlength="1" value="8"></td>
+<td><input type="text" id="tb83" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb84" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb85" class="tb" maxlength="1" value=""></td>
+<td><input type="text" id="tb86" class="tb" maxlength="1" value="4"></td>
+<td><input type="text" id="tb87" class="tb" maxlength="1" value="6"></td>
+<td><input type="text" id="tb88" class="tb" maxlength="1" value=""></td>
+</tr>
+</table>
+<br/>
+<button class="btn solvebtn" style="vertical-align:middle" onclick="makeAnArray();"><span>Solve Sudoku </span></button>
+<br/>
+<br/>
+<button class="btn clearbtn" style="vertical-align:middle" onclick="clearSudoku();"><span>Clear </span></button>
+</div>
+</body>
+</html>
